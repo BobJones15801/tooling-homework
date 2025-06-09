@@ -42,6 +42,8 @@ X_train = pd.get_dummies(X_train)
 X_valid = pd.get_dummies(X_valid)
 X_train, X_valid = X_train.align(X_valid, join='left', axis=1)
 
+X_valid = st.data_editor(X_valid, num_rows = "dynamic")
+
 # Streamlit sliders for hyperparameters
 st.sidebar.header("XGBoost Hyperparameters")
 Set_learning_rate = st.sidebar.slider("Learning Rate", 0.01, 0.5, 0.1, 0.01)
